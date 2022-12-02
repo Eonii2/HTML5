@@ -33,15 +33,14 @@ body {
 /* 메인 */
 .main{
   background: lightgreen;
-  height: 50vh;
-  display: flow-root;
-  padding: 0 15px;
+  min-height: 450px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
 }
 
-.group{
-  margin: 0 15px;
-  float: left;
-}
 .group1{
   background-color: rgb(86, 127, 217);
   width: 250px;
@@ -53,7 +52,6 @@ body {
 .group3{
   background-color: rgb(248, 119, 188);
   width: 190px;
-
 }
 
 /* 슬로건 */
