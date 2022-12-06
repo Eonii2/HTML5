@@ -1,9 +1,23 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 
+/* 숨김 콘텐츠 */
+.ally-hidden{
+  background-color: red;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0,0 0,0 0);
+}
+
 /* 기본스타일 */
 *, *::before, *::after{
   box-sizing: border-box;
+}
+
+html{
+  font-size: 10px;
 }
 
 /* 링크 스타일 */
@@ -14,8 +28,18 @@ a{
 
 /* 본문 스타일*/
 body {
+  /* em과 rem 단위를 사용해보자  */
+  font-size: 1.4rem;
   color: #212121;
-  background: #ccc;
+  background: #ccc 
+  linear-gradient(
+    to bottom,
+    #ccc 0%,
+    #eee 35%, 
+    #efefef 60%, 
+    #fff 60%, 
+    #fff 100%);
+
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
@@ -43,9 +67,19 @@ body {
 
 /* 텍스트 링크 모음  */
 .member{
-  /* background-color: aqua; */
   text-align: right;
   padding: 4px 0;
+  /* position 속성을 활용하여 .member 영역을 오른쪽으로 10px만큼 이동하기  */
+  /* position: relative;
+  right: -10px; */
+  /* transform 속성을 활용하여 .member 영역을 오른쪽으로 10px만큼 이동하기 */
+  transform: translateX(10px);
+}
+
+.member a{
+  padding: 6px 10px;
+  display: inherit;
+  text-transform: uppercase;
 }
 
 .member li{
@@ -53,14 +87,57 @@ body {
   display: inline-block;
 }
 
-.member a{
-  background-color: coral;
-  padding: 6px 10px;
-  display: inherit;
-}
+/* .member li:last-child a{
+  padding-right: 0;
+} */
 
 .divider{
   margin-right: 4px;
+}
+
+/* 메인메뉴 */
+
+.navigation{
+  padding-bottom: 80px;
+}
+
+.menu{
+  border-top: 2px solid currentColor;
+  background: #e85e2c
+  linear-gradient(
+    to bottom,
+    #ef9126 0%,
+    #e85e2c 35%,
+    #e85e2c 70%,
+    #ef9126 100%
+    );
+    border-radius: 0 0 5px 5px;
+    padding-left: 230px;
+    height: 47px;
+  
+}
+
+.menu-item {
+  float: left;
+  border-left: 2px solid #fff
+}
+
+.menu-button{
+  border: 0;
+  background: transparent;
+  padding: 0 23px;
+  line-height: 45px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+}
+
+.sub-menu {
+  background-color: pink;
+  position:absolute;
+  display: none;
+
 }
 
 /* 비주얼 */
@@ -102,7 +179,13 @@ body {
 }
 /* 푸터 */
 .footer{
-  background: gray;
+  background: #ccc
+    linear-gradient(
+      to bottom, 
+      #ccc 0%, 
+      #eee 35%,
+      #fff 70%, 
+      #fff 100%);
 }
 .footer-inner{
   background-color: silver;
